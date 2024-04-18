@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomContainerTextField.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomPassword_TextField.dart';
 import 'package:ips_tracking/constant.dart';
 import 'package:ips_tracking/core/utils/CustomButton.dart';
 import 'package:ips_tracking/core/utils/Styles.dart';
 import 'package:ips_tracking/core/utils/Validation.dart';
+import 'package:ips_tracking/core/utils/app_routres.dart';
 
 // ignore: must_be_immutable
 class LoginContianerBody extends StatefulWidget {
@@ -24,8 +27,10 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
   @override
   Widget build(BuildContext context) {
     return Form(
+    
       key: formstate,
       child: Column(
+        
         children: [
           SizedBox(
             height: 40,
@@ -82,7 +87,19 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
                 print('Not vaild');
               }
             },
+          ),
+            SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Already have an account ?',style: Styles.textstyle14,),
+              
+              GestureDetector(child: Text(' Sign Up',style: TextStyle(color: kBlackColor),),onTap: (){GoRouter.of(context).push(AppRouter.ksignUp);},),
+            ],
           )
+          
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:ips_tracking/core/utils/Styles.dart';
 
 // ignore: must_be_immutable
@@ -17,37 +18,45 @@ class CustomContainerTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.grey,
-          boxShadow: [
-            BoxShadow(
-                spreadRadius: 3,
-                color: Colors.grey.withOpacity(0.4),
-                blurRadius: 10,
-                offset: Offset(1, 1))
-          ]),
-      height: 60,
-      width: 350,
-      child: TextFormField(
-        validator:validator ,
-        textAlign: TextAlign.start,
-     style: Styles.textstyle20,
-        scrollPadding: EdgeInsets.only(bottom: 100),
-        decoration: InputDecoration(
-           fillColor: Colors.white,
-            hintText: hint,hintStyle: TextStyle(color: Colors.grey),
-            prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1),
-                borderRadius: BorderRadius.circular(15)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1),
-                borderRadius: BorderRadius.circular(15)),
-            filled: true),
-      ),
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.grey,
+              boxShadow: [
+                BoxShadow(
+                    spreadRadius: 3,
+                    color: Colors.grey.withOpacity(0.4),
+                    blurRadius: 10,
+                    offset: Offset(1, 1))
+              ]),
+          height: 60,
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: TextFormField(
+            
+            validator:validator ,
+            textAlign: TextAlign.start,
+         style: Styles.textstyle20,
+            scrollPadding: EdgeInsets.only(bottom: 100),
+            decoration: InputDecoration(
+             
+               fillColor: Colors.white,
+                hintText: hint,hintStyle: TextStyle(color: Colors.grey),
+                prefixIcon: prefixIcon ,
+                suffixIcon: suffixIcon,
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(15)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(15)),
+                filled: true),
+          ),
+        ),
+          // Show error message if validator returns an error
+      
+      ],
     );
   }
 }

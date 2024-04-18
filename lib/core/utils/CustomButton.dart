@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: 314,
+        width: MediaQuery.of(context).size.width * 0.8,
         height: 50,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),gradient: LinearGradient(colors: [Color(0xff9C3FE4),Color(0xffC65647)])),
         child: Text('$text',style: Styles.textstyle16,),
