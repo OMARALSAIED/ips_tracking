@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:ips_tracking/Features/QrCode/presentation/views/Qr_image.dart';
+import 'package:ips_tracking/Features/QrCode/presentation/views/widgets/QrCode_body.dart';
 
 
 
@@ -19,23 +18,9 @@ class _QrCodeState extends State<QrCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Qr code'),centerTitle: true,),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.all(20),
-            child: TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),labelText: 'Enter Url'
-              ),
-            ),
-          ),
-          ElevatedButton(onPressed: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context)=>QrImageApp(controller: controller,)));
-          }, child: Text('Generate QR Code')),
-          ElevatedButton(onPressed: (){}, child: Text('Scanner QR Code'))
-        ],),
+      body: QrCodeBody()
     );
   }
 }
+
+
