@@ -17,6 +17,7 @@ VaildationInput(String val, int min, int max) {
 validateNumber(String val, int min, int max) {
   final RegExp numberRegex = RegExp(r'^[0-9]+$');
 
+  // ignore: unnecessary_null_comparison
   if (!numberRegex.hasMatch(val) || val==null) {
     return "Enter a valid Number";
   }

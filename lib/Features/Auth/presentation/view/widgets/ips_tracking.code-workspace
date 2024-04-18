@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../.."
+		},
+		{
+			"name": "attendance-tracking-mobile-app",
+			"uri": "gitlab-remote://gitlab.com/attendance-tracking-mobile-app?project=57001210&ref=main"
+		}
+	],
+	"settings": {}
+}

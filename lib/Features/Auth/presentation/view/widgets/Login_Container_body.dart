@@ -41,6 +41,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
           ),
           SizedBox(
             height: 40,
+
           ),
           CustomContainerTextField(
             hint: 'Card ID',
@@ -96,7 +97,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
             children: [
               Text('Already have an account ?',style: Styles.textstyle14,),
               
-              GestureDetector(child: Text(' Sign Up',style: TextStyle(color: kBlackColor),),onTap: (){GoRouter.of(context).push(AppRouter.ksignUp);},),
+              GestureDetector(child: Text(' Sign Up',style: TextStyle(color: kBlackColor),),onTap: (){GoRouter.of(context).push(AppRouter.kQrCode);},),
             ],
           )
           
