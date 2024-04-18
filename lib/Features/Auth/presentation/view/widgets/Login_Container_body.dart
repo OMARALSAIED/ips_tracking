@@ -71,9 +71,15 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 230),
-            child: Text(
-              'Forgot password?',
-              style: Styles.textstyle12,
+            child: GestureDetector(
+              onTap: ()
+              {
+                GoRouter.of(context).push(AppRouter.kQrCode);
+              },
+              child: Text(
+                'Forgot password?',
+                style: Styles.textstyle12,
+              ),
             ),
           ),
           SizedBox(
@@ -97,7 +103,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
             children: [
               Text('Already have an account ?',style: Styles.textstyle14,),
               
-              GestureDetector(child: Text(' Sign Up',style: TextStyle(color: kBlackColor),),onTap: (){GoRouter.of(context).push(AppRouter.kQrCode);},),
+              GestureDetector(child: Text(' Sign Up',style: TextStyle(color: kBlackColor),),onTap: (){GoRouter.of(context).push(AppRouter.kSignUp);},),
             ],
           )
           
