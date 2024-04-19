@@ -36,7 +36,7 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
                 offset: Offset(1, 1))
           ]),
       height: 60,
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: MediaQuery.of(context).size.width * 0.85,
       child: TextFormField(
         
         obscureText: obscureText,

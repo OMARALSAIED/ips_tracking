@@ -6,7 +6,7 @@ import 'package:ips_tracking/constant.dart';
 abstract class Styles {
   
   static const textstyle40 =
-      TextStyle(fontSize: 40, fontWeight: FontWeight.w600,color: Color(0xffEFEFEF));
+      TextStyle(fontSize: 40, fontWeight: FontWeight.w600,color: kWhiteColor);
 
   static const textstyle20 = TextStyle(
     
@@ -26,7 +26,7 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
   );
    static const textstyle12 = TextStyle(
-    color: kWhiteColor,
+    color: kgreyColor,
     fontSize: 12,
    
   );

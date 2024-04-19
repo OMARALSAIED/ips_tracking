@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 
 import 'package:ips_tracking/core/utils/Styles.dart';
 
@@ -9,11 +11,13 @@ class CustomContainerTextField extends StatelessWidget {
     super.key,
     required this.hint, required this.prefixIcon,
      this.suffixIcon,
-     this.validator
+     this.validator,
+     
   });
   final Icon prefixIcon;
    Icon? suffixIcon;
   final String? hint;
+  
   String? Function(String?)? validator;
 
   @override
@@ -32,9 +36,9 @@ class CustomContainerTextField extends StatelessWidget {
                     offset: Offset(1, 1))
               ]),
           height: 60,
-          width: MediaQuery.of(context).size.width * 0.9,
+          width: MediaQuery.of(context).size.width * 0.85,
           child: TextFormField(
-            
+           
             validator:validator ,
             textAlign: TextAlign.start,
          style: Styles.textstyle20,
