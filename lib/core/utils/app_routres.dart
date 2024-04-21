@@ -3,6 +3,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/Login.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/SignUp.dart';
+import 'package:ips_tracking/Features/Auth/presentation/view/widgets/SignUpNext.dart';
 import 'package:ips_tracking/Features/QrCode/presentation/views/QrCode.dart';
 import 'package:ips_tracking/Features/splash/presentation/views/splash_view.dart';
 
@@ -11,6 +12,7 @@ abstract class AppRouter
 {
   static const  kLogin='/Login';
   static const  kSignUp='/SignUp';
+  static const  kSignUpNext='/SignUpNext';
   static const  kQrCode='/QrCode';
  
 
@@ -19,6 +21,7 @@ abstract class AppRouter
     GoRoute(path: '/',builder: (context, state) => const Splashview(),),
     GoRoute(path: kLogin,builder: (context, state) => const Login(),),
     GoRoute(path: kSignUp,builder: (context, state) => const SignUp(),),
+    GoRoute(path: kSignUpNext,builder: (context, state) => const SignUpNext(),),
     GoRoute(path: kQrCode,builder: (context, state) => const QrCode(),),
     
     

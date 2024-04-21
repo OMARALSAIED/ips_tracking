@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ips_tracking/Features/QrCode/presentation/views/QrCode.dart';
 import 'package:ips_tracking/core/utils/Styles.dart';
 
 // ignore: must_be_immutable
@@ -8,11 +9,13 @@ class CustomPasswordTextField extends StatefulWidget {
     super.key,
     required this.hint, required this.prefixIcon,
      this.suffixIcon,
-     this.validator
+     this.validator,
+     this.controller
   });
   final Icon prefixIcon;
    Icon? suffixIcon;
   final String? hint;
+  TextEditingController? controller;
   String? Function(String?)? validator;
 
   @override
@@ -38,7 +41,7 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
       height: 60,
       width: MediaQuery.of(context).size.width * 0.85,
       child: TextFormField(
-        
+        controller:controller ,
         obscureText: obscureText,
         validator:widget.validator ,
         textAlign: TextAlign.start,

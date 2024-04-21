@@ -2,13 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomContainerTextField.dart';
+import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomPassword_TextField.dart';
 import 'package:ips_tracking/constant.dart';
 import 'package:ips_tracking/core/utils/CustomButton.dart';
 import 'package:ips_tracking/core/utils/Styles.dart';
 import 'package:ips_tracking/core/utils/app_routres.dart';
 
-class SignUpContainerBody extends StatelessWidget {
-  const SignUpContainerBody({super.key});
+class SignUpNextContainerBody extends StatelessWidget {
+  const SignUpNextContainerBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,31 +20,34 @@ class SignUpContainerBody extends StatelessWidget {
           ),
 
           Text('Get Started',style: Styles.textstyle40,),
-          Text('Step 1',style: Styles.textstyle12,),
+          Text('Step 2',style: Styles.textstyle12,),
            SizedBox(
             height: 10,
           ),
-          CustomContainerTextField(hint: 'Department', prefixIcon: Icon(Icons.domain,color: kBlackColor,),),
+          CustomContainerTextField(hint: 'Date Of Birth', prefixIcon: Icon(Icons.pages,color: kBlackColor,),),
             SizedBox(
             height: 10,
           ),
-          CustomContainerTextField(hint: 'Card iD', prefixIcon: Icon(Icons.calendar_view_day_outlined,color: kBlackColor,),),
+          CustomContainerTextField(hint: 'phone Number', prefixIcon: Icon(Icons.phone,color: kBlackColor,),),
             SizedBox(
             height: 10,
           ),
-          CustomContainerTextField(hint: 'NationalID', prefixIcon: Icon(Icons.calendar_view_day_outlined,color: kBlackColor,),),
+           CustomContainerTextField(hint: 'Address', prefixIcon: Icon(Icons.location_city,color: kBlackColor,),),
             SizedBox(
             height: 10,
           ),
-          CustomContainerTextField(hint: 'Gender', prefixIcon: Icon(Icons.family_restroom_sharp,color: kBlackColor,),),
+          CustomContainerTextField(hint: 'Email', prefixIcon: Icon(Icons.email,color: kBlackColor,),),
             SizedBox(
             height: 10,
           ),
-          CustomContainerTextField(hint: 'Full Name', prefixIcon: Icon(Icons.person,color: kBlackColor,),)
-          ,  SizedBox(
+         CustomPasswordTextField(hint: 'Password', prefixIcon: Icon(Icons.key,color: kBlackColor,)),
+            SizedBox(
+            height: 10,
+          ),
+          SizedBox(
             height: 40,
           ),
-          CustomButton(text: 'Next',onTap: ()
+          CustomButton(text: 'Sign Up',onTap: ()
           {
             GoRouter.of(context).push(AppRouter.kSignUpNext);
           }

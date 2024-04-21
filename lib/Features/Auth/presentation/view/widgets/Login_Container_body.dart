@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ips_tracking/Features/Auth/presentation/manger/block/auth_blok.dart';
+import 'package:ips_tracking/Features/Auth/presentation/manger/block/auth_events.dart';
+import 'package:ips_tracking/Features/Auth/presentation/manger/block/auth_state.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomContainerTextField.dart';
 import 'package:ips_tracking/Features/Auth/presentation/view/widgets/CustomPassword_TextField.dart';
 import 'package:ips_tracking/constant.dart';
@@ -21,11 +25,31 @@ class LoginContianerBody extends StatefulWidget {
 
 class _LoginContianerBodyState extends State<LoginContianerBody> {
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
-  final TextEditingController cardID = TextEditingController();
-  final TextEditingController password = TextEditingController();
+  final TextEditingController cardIDcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
+
+  late AuthBloc authBloc;
+  @override
+  void intitState()
+  {
+    authBloc=BlocProvider.of<AuthBloc>(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
+    final msg=BlocBuilder<AuthBloc,AuthState>(builder: (context, state) 
+    {
+      if(state is LoginFaliureState)
+      {
+        return Text(state.errorMessage);
+      }
+      else if(state is LoginLoadingState)
+      {
+        return Center(child: CircularProgressIndicator(),);
+      }
+    },);
     return Form(
     
       key: formstate,
@@ -44,6 +68,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
 
           ),
           CustomContainerTextField(
+            controller: cardIDcontroller,
             hint: 'Card ID',
             prefixIcon: Icon(
               Icons.person,
@@ -57,6 +82,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
             height: 20,
           ),
           CustomPasswordTextField(
+            controller: passwordcontroller,
             hint: 'Password',
             prefixIcon: Icon(
               Icons.key,
@@ -88,6 +114,7 @@ class _LoginContianerBodyState extends State<LoginContianerBody> {
           CustomButton(
             text: 'Log in',
             onTap: () {
+              authBloc.add(LoginButtonPress(CardId: cardIDcontroller.text, password: passwordcontroller.text));
               if (formstate.currentState!.validate()) {
                 print("Vaild");
               } else {

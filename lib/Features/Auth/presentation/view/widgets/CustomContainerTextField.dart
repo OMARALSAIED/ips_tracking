@@ -12,11 +12,13 @@ class CustomContainerTextField extends StatelessWidget {
     required this.hint, required this.prefixIcon,
      this.suffixIcon,
      this.validator,
+     this.controller
      
   });
   final Icon prefixIcon;
    Icon? suffixIcon;
   final String? hint;
+  TextEditingController? controller;
   
   String? Function(String?)? validator;
 
@@ -38,7 +40,7 @@ class CustomContainerTextField extends StatelessWidget {
           height: 60,
           width: MediaQuery.of(context).size.width * 0.85,
           child: TextFormField(
-           
+           controller: controller,
             validator:validator ,
             textAlign: TextAlign.start,
          style: Styles.textstyle20,
